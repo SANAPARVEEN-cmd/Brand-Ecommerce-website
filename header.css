@@ -1,0 +1,141 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+.navbar {
+  height: 85px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40px 0 40px;
+  background: #fff;
+  border-bottom: 1px solid #ddd;
+}
+
+/* LOGO */
+.nav-left img {
+  height: 40px;
+}
+
+/* CENTER */
+.nav-center {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.search-box {
+  width: 65%;
+  display: flex;
+  border: 2px solid #0d6efd;
+  position: relative;
+}
+
+/* INPUT */
+.search-box input {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  outline: none;
+}
+
+/* RIGHT CONTROLS */
+.right-controls {
+  display: flex;
+}
+
+/* CATEGORY */
+.category {
+  position: relative;
+  background: #f1f1f1;
+  padding: 0 15px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  border-left: 1px solid #ccc;
+}
+
+/* DROPDOWN */
+.dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  width: 180px;
+  background: white;
+  border: 1px solid #ddd;
+  display: none;
+  flex-direction: column;
+}
+
+.dropdown div {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.dropdown div:hover {
+  background: #f5f5f5;
+}
+
+/* SEARCH BUTTON */
+.search-btn {
+  background: #0d6efd;
+  color: white;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+/* SUGGESTIONS */
+.suggestions {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background: white;
+  border: 1px solid #ddd;
+  display: none;
+}
+
+.suggestions div {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.suggestions div:hover {
+  background: #f1f1f1;
+}
+
+/* RIGHT NAV */
+.nav-right {
+  display: flex;
+  gap: 25px;
+}
+
+.nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 13px;
+  cursor: pointer;
+  position: relative;
+}
+
+.nav-item i {
+  font-size: 18px;
+}
+
+/* CART BADGE */
+.badge {
+  position: absolute;
+  top: -5px;
+  right: -10px;
+  background: red;
+  color: white;
+  font-size: 10px;
+  padding: 2px 6px;
+}

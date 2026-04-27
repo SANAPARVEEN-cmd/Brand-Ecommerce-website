@@ -1,0 +1,112 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+/* MAIN FOOTER */
+.footer {
+  background: #f8f9fa;
+  padding: 50px 80px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  border-top: 1px solid #ddd;
+}
+
+/* COLUMNS */
+.footer-col {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 160px;
+}
+
+/* ABOUT COLUMN */
+.footer-about {
+  max-width: 280px;
+}
+
+/* LOGO */
+.footer-about img {
+  width: 130px;
+}
+
+/* TEXT */
+.footer p {
+  font-size: 14px;
+  color: #555;
+  cursor: pointer;
+  line-height: 1.5;
+}
+
+/* HEADINGS */
+.footer h4 {
+  font-size: 16px;
+  margin-bottom: 10px;
+  color: #000;
+}
+
+/* ICONS */
+.icons {
+  display: flex;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.icons i {
+  font-size: 18px;
+  color: #555;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.icons i:hover {
+  color: #0d6efd;
+}
+
+/* APP IMAGES */
+.footer-col img[alt="app"] {
+  width: 140px;
+  margin-top: 5px;
+  cursor: pointer;
+}
+
+/* HOVER LINKS */
+.footer p:hover {
+  color: #0d6efd;
+}
+
+/* BOTTOM BAR */
+.footer-bottom {
+  background: #e9ecef;
+  padding: 25px 110px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid #ddd;
+}
+
+/* COPYRIGHT */
+.footer-bottom p {
+  font-size: 13px;
+  color: #555;
+}
+
+/* LINKS */
+.footer-bottom-links {
+  display: flex;
+  gap: 20px;
+}
+
+.footer-bottom-links span {
+  font-size: 13px;
+  color: #555;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.footer-bottom-links span:hover {
+  color: #0d6efd;
+}
