@@ -1,3 +1,4 @@
+/* RESET */
 * {
   margin: 0;
   padding: 0;
@@ -5,12 +6,16 @@
   font-family: Arial, sans-serif;
 }
 
+/* ========================= */
+/* TOP NAVBAR */
+/* ========================= */
+
 .navbar {
-  height: 85px;
+  height: 70px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 40px 0 40px;
+  padding: 0 40px;
   background: #fff;
   border-bottom: 1px solid #ddd;
 }
@@ -69,6 +74,7 @@
   border: 1px solid #ddd;
   display: none;
   flex-direction: column;
+  z-index: 1000;
 }
 
 .dropdown div {
@@ -99,6 +105,7 @@
   background: white;
   border: 1px solid #ddd;
   display: none;
+  z-index: 1000;
 }
 
 .suggestions div {
@@ -138,4 +145,122 @@
   color: white;
   font-size: 10px;
   padding: 2px 6px;
+}
+
+/* ========================= */
+/* NAV BOTTOM (PROPER LAYOUT) */
+/* ========================= */
+
+.nav-bottom {
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40px;
+  background: #fff;
+  border-bottom: 1px solid #ddd;
+}
+
+/* LEFT: CATEGORY BUTTON */
+.category-menu {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.category-menu i {
+  font-size: 16px;
+}
+
+/* CENTER: MENU LINKS */
+.menu-links {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  margin-left: 40px;
+  flex: 1; /* pushes right side to end */
+}
+
+.menu-links p {
+  font-size: 14px;
+  color: #333;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.menu-links p:hover {
+  color: #0d6efd;
+}
+
+/* RIGHT: LANGUAGE + SHIPPING */
+.language-currency {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.language-currency img {
+  width: 14px;
+}
+
+/* HOVER */
+.language-currency span:hover {
+  color: #0d6efd;
+}
+/* ========================= */
+/* MEGA MENU */
+/* ========================= */
+
+.category-menu {
+  position: relative;
+}
+
+/* MAIN PANEL */
+.mega-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 700px;
+  background: #fff;
+  border: 1px solid #ddd;
+  display: none;
+  padding: 20px;
+  gap: 40px;
+  z-index: 1000;
+}
+
+/* SHOW ON HOVER */
+.category-menu:hover .mega-menu {
+  display: flex;
+}
+
+/* COLUMNS */
+.mega-column {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 150px;
+}
+
+/* HEADINGS */
+.mega-column h4 {
+  font-size: 15px;
+  margin-bottom: 10px;
+  color: #000;
+}
+
+/* LINKS */
+.mega-column p {
+  font-size: 14px;
+  color: #555;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.mega-column p:hover {
+  color: #0d6efd;
 }

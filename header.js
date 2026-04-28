@@ -44,4 +44,13 @@ input.addEventListener("input", () => {
   });
 
   suggestionsBox.style.display = "block";
+
+
+  const categoryMenu = document.getElementById("categoryMenu");
+const megaMenu = document.getElementById("megaMenu");
+
+categoryMenu.addEventListener("click", () => {
+  megaMenu.style.display =
+    megaMenu.style.display === "flex" ? "none" : "flex";
+});
 });
