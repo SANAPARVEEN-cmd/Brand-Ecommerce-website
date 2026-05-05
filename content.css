@@ -502,8 +502,14 @@ html, body {
   }
 }
 
+body {
+  background: #f5f5f5;
+  font-family: Arial, sans-serif;
+}
+
 .electronic-items {
   display: flex;
+  align-items: stretch; 
   gap: 30px;
   padding: 40px 30px;
   background-color: white;
@@ -511,16 +517,14 @@ html, body {
   border-radius: 12px;
 }
 
-/* LEFT SIDE */
 .items-sideleft {
   flex: 0 0 30%;
   position: relative;
   border-radius: 12px;
   overflow: hidden;
-  height: 220px;
+
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
 }
 
 .items-sideleft img {
@@ -533,6 +537,7 @@ html, body {
   z-index: 1;
 }
 
+
 .items-sideleft h2,
 .items-sideleft button {
   position: relative;
@@ -542,11 +547,17 @@ html, body {
 
 .items-sideleft h2 {
   margin-top: 15px;
-  font-size: 20px;
+  font-size: 28px;
+  color: black;
+  font-weight: bolder;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
 
 .items-sideleft button {
-  margin-top: 10px;
+  height: 50px;
+  width: 150px;
+  font-weight: bold;
+  margin-top: 20px;
   padding: 8px 20px;
   background: white;
   border: none;
@@ -559,7 +570,7 @@ html, body {
   color: white;
 }
 
-/* RIGHT SIDE GRID */
+
 .items-sideright {
   flex: 1;
   display: grid;
@@ -567,7 +578,6 @@ html, body {
   gap: 15px;
 }
 
-/* PRODUCT CARD */
 .product-card {
   background: #fff;
   border-radius: 10px;
@@ -584,15 +594,14 @@ html, body {
   box-shadow: 0 4px 15px rgba(0,0,0,0.15);
 }
 
-/* 🔥 IMAGE FIX (MAIN SOLUTION) */
 .product-card img {
   width: 100%;
-  height: 80px;              /* FIXED HEIGHT */
-  object-fit: contain;       /* IMPORTANT */
+  height: 80px;
+  object-fit: contain;
   margin-bottom: 8px;
 }
 
-/* TEXT */
+
 .product-info {
   text-align: center;
 }
@@ -604,7 +613,168 @@ html, body {
 
 .product-info p {
   font-size: 13px;
-  color:rgb(88, 88, 243);
+  color: rgb(88, 88, 243);
   font-weight: bold;
   margin: 0;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+
+.request-form {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px;
+  
+
+  background: url('/assets/Image/backgrounds/Group\ 982.png') no-repeat center/cover;
+  
+  border-radius: 12px;
+  margin: 20px;
+}
+
+
+.request-left {
+  width: 50%;
+  color: white;
+}
+
+.request-left h1 {
+  font-size: 32px;
+  margin-bottom: 15px;
+}
+
+.request-left p {
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+
+.request-right {
+  width: 40%;
+  display: flex;
+  justify-content: center;
+}
+
+
+.form-box {
+  background: white;
+  padding: 25px;
+  border-radius: 10px;
+  width: 100%;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+}
+
+
+.form-box h2 {
+  margin-bottom: 15px;
+}
+
+
+.form-box input,
+.form-box textarea,
+.form-box select {
+  width: 100%;
+  padding: 10px;
+  margin-top: 8px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  outline: none;
+}
+
+
+.form-box textarea {
+  height: 80px;
+  resize: none;
+}
+
+
+.form-row {
+  display: flex;
+  gap: 10px;
+}
+
+.form-row input {
+  flex: 2;
+}
+
+.form-row select {
+  flex: 1;
+}
+
+/* BUTTON */
+.form-box button {
+  width: 100%;
+  padding: 12px;
+  background: #1874d6;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.form-box button:hover {
+  background: #0f5bb5;
+}
+body {
+  background: #f5f5f5;
+  font-family: Arial, sans-serif;
+}
+
+/* MAIN SECTION */
+.recommended-items {
+  margin: 20px;
+}
+
+.recommended-items h2 {
+  margin-bottom: 20px;
+}
+
+/* GRID */
+.items-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* 🔥 5 per row */
+  gap: 15px;
+}
+
+/* CARD */
+.item-card {
+  background: white;
+  padding: 12px;
+  border-radius: 10px;
+  text-align: center;
+  transition: 0.3s;
+}
+
+/* HOVER EFFECT */
+.item-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+}
+
+/* IMAGE */
+.item-card img {
+  width: 100%;
+  height: 120px;
+  object-fit: contain;
+  margin-bottom: 10px;
+}
+
+/* TEXT */
+.price {
+  font-weight: bold;
+  color: black;
+  margin: 0;
+}
+
+.title {
+  font-size: 13px;
+  color: black;
+  margin: 5px 0 0;
 }
