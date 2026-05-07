@@ -12,6 +12,10 @@
 <body>
   <div class="wrapper">
     <div id="header"></div>
+    <h3 class="cart-header">
+  Cart Items:
+  <span id="cart-count">3</span>
+</h3>
     <!-- selected products in cart -->
     <section class="above-section">
 
@@ -122,7 +126,7 @@
 
         <!-- CART BUTTONS -->
         <footer class="cart-buttons">
-          <button class="back-btn">Back to shop</button>
+         <a href = "index.html"> <button class="back-btn" >Back to shop</button></a>
           <button class="remove-all-btn">Remove all</button>
         </footer>
 
@@ -204,18 +208,89 @@
       <p>Have you ever finally just</p>
     </div>
   </div>
-<section>
-  <h3>Saved for later</h3>
-  <div>
-     <img />
-     <p></p>
-     <p></p>
-     <button>Move to cart</button>
-  </div>
-</section>
-</div>
-  
 
+</div>
+ 
+
+<section class="saved-section">
+
+  <h3>Saved for later</h3>
+
+  <div class="saved-products">
+
+    <!-- CARD 1 -->
+    <article class="saved-card">
+      <img src="/assets/Image/tech/image 32.png" alt="camera">
+
+      <h4>$99.50</h4>
+
+      <p>GoPro HERO64 4K Action Camera - Black</p>
+
+      <button>
+        <i class="fa-solid fa-cart-shopping"></i>
+        Move to cart
+      </button>
+    </article>
+
+    <!-- CARD 2 -->
+    <article class="saved-card">
+      <img src="/assets/Image/tech/image 23.png" alt="mobile">
+
+      <h4>$99.50</h4>
+
+      <p>GoPro HERO64 4K Action Camera - Black</p>
+
+      <button>
+        <i class="fa-solid fa-cart-shopping"></i>
+        Move to cart
+      </button>
+    </article>
+
+    <!-- CARD 3 -->
+    <article class="saved-card">
+      <img src="/assets/Image/tech/8.png" alt="watch">
+
+      <h4>$99.50</h4>
+
+      <p>GoPro HERO64 4K Action Camera - Black</p>
+
+      <button>
+        <i class="fa-solid fa-cart-shopping"></i>
+        Move to cart
+      </button>
+    </article>
+
+    <!-- CARD 4 -->
+    <article class="saved-card">
+      <img src="/assets/Image/tech/image 34.png" alt="laptop">
+
+      <h4>$99.50</h4>
+
+      <p>GoPro HERO64 4K Action Camera - Black</p>
+
+      <button>
+        <i class="fa-solid fa-cart-shopping"></i>
+        Move to cart
+      </button>
+    </article>
+
+  </div>
+
+</section>
+ <section class="discount-banner">
+
+  <div class="discount-text">
+    <h1>Super Discount on Move</h1>
+    <p>
+      Over $100 USD savings on selected products. Have you ever finally just found the perfect deal that matches your needs? Grab it now before it’s gone!
+    </p>
+  </div>
+
+  <div class="discount-action">
+    <button>Shop Now</button>
+  </div>
+
+</section>
   </div>
   <div id="footer"></div>
   </div>
@@ -232,6 +307,71 @@
       .then((data) => {
         document.getElementById("footer").innerHTML = data;
       });
+
+  
+let cartCount = document.querySelectorAll(".product-card").length;
+const cartCountElement = document.getElementById("cart-count");
+
+
+function updateCartCount() {
+  cartCountElement.textContent = cartCount;
+}
+
+updateCartCount();
+
+document.querySelectorAll(".remove-btn").forEach((btn) => {
+  btn.addEventListener("click", (e) => {
+    const productCard = e.target.closest(".product-card");
+    productCard.remove();
+
+    cartCount--;
+    updateCartCount();
+    updateSubtotal();
+  });
+});
+
+
+document.querySelector(".remove-all-btn").addEventListener("click", () => {
+  document.querySelectorAll(".product-card").forEach((card) => card.remove());
+
+  cartCount = 0;
+  updateCartCount();
+  updateSubtotal();
+});
+
+
+document.querySelectorAll(".product-card").forEach((card) => {
+  const select = card.querySelector("select");
+
+  select.addEventListener("change", () => {
+    updateSubtotal();
+  });
+});
+
+function updateSubtotal() {
+  let subtotal = 0;
+
+  document.querySelectorAll(".product-card").forEach((card) => {
+    let priceText = card.querySelector(".product-price h3").textContent;
+    let price = parseFloat(priceText.replace("$", ""));
+
+    let qtyText = card.querySelector("select").value;
+    let qty = parseInt(qtyText.replace("QTY:", "").trim());
+
+    subtotal += price * qty;
+  });
+
+  document.querySelector(".checkout div p").textContent = "$" + subtotal.toFixed(2);
+
+
+}
+
+
+document.querySelectorAll(".save-btn").forEach((btn) => {
+  btn.addEventListener("click", () => {
+    alert("Item saved for later!");
+  });
+});
   </script>
 </body>
 

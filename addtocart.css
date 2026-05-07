@@ -10,7 +10,28 @@ body{
     color:black;
 }
 
-/* MAIN SECTION */
+.cart-header{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-size:18px;
+    font-weight:600;
+    color:#222;
+    margin: 15px 0  0 40px;
+}
+
+/* Cart number badge */
+#cart-count{
+    background:#127fff;
+    color:white;
+    padding:4px 10px;
+    border-radius:20px;
+    font-size:14px;
+    font-weight:bold;
+    display:inline-block;
+    min-width:30px;
+    text-align:center;
+}
 
 .above-section{
     display:flex;
@@ -181,12 +202,14 @@ body{
 .checkout{
     padding:20px;
     border-radius:10px;
+     background-color: #fff;
 }
 
 .checkout div{
     display:flex;
     justify-content:space-between;
     margin-bottom:15px;
+   
 }
 
 .checkout hr{
@@ -247,4 +270,137 @@ body{
 .service-box p{
     font-size:14px;
     color:gray;
+}
+.saved-section{
+    margin-top:40px;
+    background:white;
+    padding:25px;
+    border-radius:10px;
+}
+
+.saved-section h3{
+    margin-bottom:25px;
+    font-size:24px;
+    color:black;
+}
+
+/* FLEX CARDS */
+
+.saved-products{
+    display:flex;
+    gap:15px;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    margin:30px
+    
+}
+
+/* CARD */
+
+.saved-card{
+    width:230px;
+    background:white;
+    border:1px solid #ddd;
+    border-radius:10px;
+    padding:15px;
+    transition:0.3s;
+}
+
+.saved-card:hover{
+    box-shadow:0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* IMAGE */
+
+.saved-card img{
+    width:100%;
+    height:180px;
+    object-fit:contain;
+    background:#f7f7f7;
+    border-radius:8px;
+    margin-bottom:15px;
+}
+
+/* TEXT */
+
+.saved-card h4{
+    font-size:20px;
+    margin-bottom:10px;
+    color:black;
+}
+
+.saved-card p{
+    color:gray;
+    line-height:1.5;
+    margin-bottom:15px;
+}
+
+/* BUTTON */
+
+.saved-card button{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    padding:10px 16px;
+    border:1px solid #127fff;
+    background:white;
+    color:#127fff;
+    border-radius:6px;
+    cursor:pointer;
+    font-weight:bold;
+    transition:0.3s;
+}
+
+.saved-card button:hover{
+    background:#127fff;
+    color:white;
+}
+
+.saved-card button i{
+    font-size:14px;
+}
+
+.discount-banner{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:40px;
+    margin:40px;
+    border-radius:12px;
+
+    /* Gradient blue background */
+    background:linear-gradient(135deg, #1e90ff, #00c6ff);
+    color:white;
+}
+
+/* LEFT TEXT */
+.discount-text{
+    max-width:70%;
+}
+
+.discount-text h1{
+    font-size:32px;
+    margin-bottom:10px;
+}
+
+.discount-text p{
+    font-size:16px;
+    line-height:1.5;
+    opacity:0.9;
+}
+
+/* BUTTON SIDE */
+.discount-action button{
+    padding:14px 25px;
+    border:none;
+    border-radius:8px;
+    background:white;
+    color:#1e90ff;
+    font-weight:bold;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.discount-action button:hover{
+    background:#f1f1f1;
 }
