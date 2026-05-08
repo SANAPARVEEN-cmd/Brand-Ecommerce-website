@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Category Page</title>
+
+  <link rel="stylesheet" href="category.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <div id="header"></div>
+
+
+  <!-- CATEGORY HERO -->
+  <section class="category-hero">
+    <div>
+      <h1>Consumer Electronics</h1>
+      <p>
+        Explore premium smartphones, laptops, accessories,
+        headphones and smart gadgets.
+      </p>
+    </div>
+  </section>
+
+
+  <!-- MAIN CATEGORY LAYOUT -->
+  <section class="category-layout">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+      <!-- SEARCH -->
+      <div class="filter-box">
+        <h3>Search</h3>
+        <input
+          type="text"
+          id="searchInput"
+          placeholder="Search products..."
+        />
+      </div>
+
+
+      <!-- CATEGORY FILTER -->
+      <div class="filter-box">
+        <h3>Categories</h3>
+
+        <label>
+          <input type="radio" name="category" value="all" checked />
+          All
+        </label>
+
+        <label>
+          <input type="radio" name="category" value="phone" />
+          Phones
+        </label>
+
+        <label>
+          <input type="radio" name="category" value="laptop" />
+          Laptops
+        </label>
+
+        <label>
+          <input type="radio" name="category" value="headphone" />
+          Headphones
+        </label>
+
+        <label>
+          <input type="radio" name="category" value="watch" />
+          Smart Watches
+        </label>
+
+      </div>
+
+
+      <!-- BRAND FILTER -->
+      <div class="filter-box">
+        <h3>Brands</h3>
+
+        <label>
+          <input type="checkbox" class="brand-filter" value="Apple" />
+          Apple
+        </label>
+
+        <label>
+          <input type="checkbox" class="brand-filter" value="Samsung" />
+          Samsung
+        </label>
+
+        <label>
+          <input type="checkbox" class="brand-filter" value="Dell" />
+          Dell
+        </label>
+
+        <label>
+          <input type="checkbox" class="brand-filter" value="Sony" />
+          Sony
+        </label>
+
+        <label>
+          <input type="checkbox" class="brand-filter" value="Xiaomi" />
+          Xiaomi
+        </label>
+
+      </div>
+
+
+      <!-- FEATURES -->
+      <div class="filter-box">
+        <h3>Features</h3>
+
+        <label>
+          <input type="checkbox" class="feature-filter" value="Wireless" />
+          Wireless
+        </label>
+
+        <label>
+          <input type="checkbox" class="feature-filter" value="Metallic" />
+          Metallic
+        </label>
+
+        <label>
+          <input type="checkbox" class="feature-filter" value="Fast Charging" />
+          Fast Charging
+        </label>
+
+        <label>
+          <input type="checkbox" class="feature-filter" value="AMOLED" />
+          AMOLED
+        </label>
+
+      </div>
+
+
+      <!-- PRICE -->
+      <div class="filter-box">
+        <h3>Price Range</h3>
+
+        <label>
+          <input type="radio" name="price" value="all" checked />
+          All Prices
+        </label>
+
+        <label>
+          <input type="radio" name="price" value="100" />
+          Under $100
+        </label>
+
+        <label>
+          <input type="radio" name="price" value="500" />
+          $100 - $500
+        </label>
+
+        <label>
+          <input type="radio" name="price" value="1000" />
+          Above $500
+        </label>
+
+      </div>
+
+
+      <!-- RATING -->
+      <div class="filter-box">
+        <h3>Ratings</h3>
+
+        <label>
+          <input type="radio" name="rating" value="all" checked />
+          All Ratings
+        </label>
+
+        <label>
+          <input type="radio" name="rating" value="4" />
+          4★ & above
+        </label>
+
+        <label>
+          <input type="radio" name="rating" value="3" />
+          3★ & above
+        </label>
+
+      </div>
+
+    </aside>
+
+
+    <!-- PRODUCTS SECTION -->
+    <div class="products-section">
+
+      <!-- TOP BAR -->
+      <div class="top-bar">
+
+        <p>
+          <span id="productCount">0</span>
+          Products Found
+        </p>
+
+        <select id="sortSelect">
+          <option value="default">Sort By</option>
+          <option value="low-high">Price: Low to High</option>
+          <option value="high-low">Price: High to Low</option>
+        </select>
+
+      </div>
+
+
+      <!-- PRODUCTS GRID -->
+      <div class="products-grid" id="productsGrid">
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- FOOTER -->
+  <div id="footer"></div>
+
+
+  <script src="products.js"></script>
+  <script src="category.js"></script>
+
+</body>
+</html>

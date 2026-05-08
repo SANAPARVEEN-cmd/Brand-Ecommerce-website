@@ -5,374 +5,76 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Add To Cart</title>
+
   <link rel="stylesheet" href="addtocart.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
 </head>
 
 <body>
-  <div class="wrapper">
-    <div id="header"></div>
-    <h3 class="cart-header">
-  Cart Items:
-  <span id="cart-count">3</span>
-</h3>
-    <!-- selected products in cart -->
-    <section class="above-section">
 
-      <!-- LEFT SIDE -->
-      <section class="cart-product">
+<div class="wrapper">
 
-        <!-- PRODUCT 1 -->
-        <article class="product-card">
+  <div id="header"></div>
 
-          <div class="product-info">
+  <h3 class="cart-header">
+    Cart Items:
+    <span id="cart-count">0</span>
+  </h3>
 
-            <figure>
-              <img src="/assets/Layout/alibaba/Image/cloth/Bitmap.png" alt="T-shirt">
-            </figure>
+  <section class="above-section">
 
-            <div class="product-text">
-              <h4>T-shirts with multiple colors</h4>
+    <!-- LEFT SIDE CART -->
+    <section class="cart-product" id="cartContainer"></section>
 
-              <p>Size: Medium, Color: Blue, Material: Plastic</p>
+    <!-- RIGHT SIDE -->
+    <aside class="right-side">
 
-              <p>Seller: Artel Plastic</p>
+      <section class="coupon">
+        <h4>Have a coupon?</h4>
+        <div class="coupon-input">
+          <input type="text" placeholder="Add Coupon">
+          <button>Apply</button>
+        </div>
+      </section>
 
-              <div class="buttons">
-                <button class="remove-btn">Remove</button>
-                <button class="save-btn">Save for later</button>
-              </div>
-            </div>
+      <section class="checkout">
 
-          </div>
+        <div>
+          <h5>Subtotal</h5>
+          <p id="subtotal">$0</p>
+        </div>
 
-          <aside class="product-price">
-            <h3>$78.99</h3>
+        <div>
+          <h5>Discount</h5>
+          <p>-$0.00</p>
+        </div>
 
-            <select>
-              <option>QTY: 9</option>
-            </select>
-          </aside>
+        <div>
+          <h5>Tax</h5>
+          <p>$0.00</p>
+        </div>
 
-        </article>
+        <hr>
 
-        <!-- PRODUCT 2 -->
-        <article class="product-card">
+        <div class="total">
+          <h4>Total:</h4>
+          <p id="total">$0</p>
+        </div>
 
-          <div class="product-info">
-
-            <figure>
-              <img src="/assets/Layout/alibaba/Image/cloth/image 26.png" alt="Coat">
-            </figure>
-
-            <div class="product-text">
-              <h4>Modern Coat</h4>
-
-              <p>Size: Medium, Color: Blue, Material: Plastic</p>
-
-              <p>Seller: Best Factory LLC</p>
-
-              <div class="buttons">
-                <button class="remove-btn">Remove</button>
-                <button class="save-btn">Save for later</button>
-              </div>
-            </div>
-
-          </div>
-
-          <aside class="product-price">
-            <h3>$39.99</h3>
-
-            <select>
-              <option>QTY: 3</option>
-            </select>
-          </aside>
-
-        </article>
-
-        <!-- PRODUCT 3 -->
-        <article class="product-card">
-
-          <div class="product-info">
-
-            <figure>
-              <img src="/assets/Image/interior/6.png" alt="Chair">
-            </figure>
-
-            <div class="product-text">
-              <h4>Office Chair</h4>
-
-              <p>Size: Medium, Color: Blue, Material: Plastic</p>
-
-              <p>Seller: Artel Plastic</p>
-
-              <div class="buttons">
-                <button class="remove-btn">Remove</button>
-                <button class="save-btn">Save for later</button>
-              </div>
-            </div>
-
-          </div>
-
-          <aside class="product-price">
-            <h3>$170.99</h3>
-
-            <select>
-              <option>QTY: 1</option>
-            </select>
-          </aside>
-
-        </article>
-
-        <!-- CART BUTTONS -->
-        <footer class="cart-buttons">
-         <a href = "index.html"> <button class="back-btn" >Back to shop</button></a>
-          <button class="remove-all-btn">Remove all</button>
-        </footer>
+        <button>Checkout</button>
 
       </section>
 
-      <!-- RIGHT SIDE -->
-      <aside class="right-side">
+    </aside>
 
-        <!-- COUPON -->
-        <section class="coupon">
+  </section>
 
-          <h4>Have a coupon?</h4>
-
-          <div class="coupon-input">
-            <input type="text" placeholder="Add Coupon">
-
-            <button>Apply</button>
-          </div>
-
-        </section>
-
-        <!-- CHECKOUT -->
-        <section class="checkout">
-
-          <div>
-            <h5>Subtotal</h5>
-            <p>$1403.97</p>
-          </div>
-
-          <div>
-            <h5>Discount</h5>
-            <p>-$60.00</p>
-          </div>
-
-          <div>
-            <h5>Tax</h5>
-            <p>$14.00</p>
-          </div>
-
-          <hr>
-
-          <div class="total">
-            <h4>Total:</h4>
-            <p>$1357.97</p>
-          </div>
-
-          <button>Checkout</button>
-
-        </section>
-
-      </aside>
-
-    </section>
-    <div class="services">
-
-  <div class="service-box">
-    <i class="fa-solid fa-lock"></i>
-
-    <div>
-      <h5>Secure Payments</h5>
-      <p>Have you ever finally just</p>
-    </div>
-  </div>
-
-  <div class="service-box">
-    <i class="fa-solid fa-headset"></i>
-
-    <div>
-      <h5>Customer Support</h5>
-      <p>Have you ever finally just</p>
-    </div>
-  </div>
-
-  <div class="service-box">
-    <i class="fa-solid fa-truck"></i>
-
-    <div>
-      <h5>Free Delivery</h5>
-      <p>Have you ever finally just</p>
-    </div>
-  </div>
+  <div id="footer"></div>
 
 </div>
- 
 
-<section class="saved-section">
+<script src="products.js"></script>
+<script src="addtocart.js"></script>
 
-  <h3>Saved for later</h3>
-
-  <div class="saved-products">
-
-    <!-- CARD 1 -->
-    <article class="saved-card">
-      <img src="/assets/Image/tech/image 32.png" alt="camera">
-
-      <h4>$99.50</h4>
-
-      <p>GoPro HERO64 4K Action Camera - Black</p>
-
-      <button>
-        <i class="fa-solid fa-cart-shopping"></i>
-        Move to cart
-      </button>
-    </article>
-
-    <!-- CARD 2 -->
-    <article class="saved-card">
-      <img src="/assets/Image/tech/image 23.png" alt="mobile">
-
-      <h4>$99.50</h4>
-
-      <p>GoPro HERO64 4K Action Camera - Black</p>
-
-      <button>
-        <i class="fa-solid fa-cart-shopping"></i>
-        Move to cart
-      </button>
-    </article>
-
-    <!-- CARD 3 -->
-    <article class="saved-card">
-      <img src="/assets/Image/tech/8.png" alt="watch">
-
-      <h4>$99.50</h4>
-
-      <p>GoPro HERO64 4K Action Camera - Black</p>
-
-      <button>
-        <i class="fa-solid fa-cart-shopping"></i>
-        Move to cart
-      </button>
-    </article>
-
-    <!-- CARD 4 -->
-    <article class="saved-card">
-      <img src="/assets/Image/tech/image 34.png" alt="laptop">
-
-      <h4>$99.50</h4>
-
-      <p>GoPro HERO64 4K Action Camera - Black</p>
-
-      <button>
-        <i class="fa-solid fa-cart-shopping"></i>
-        Move to cart
-      </button>
-    </article>
-
-  </div>
-
-</section>
- <section class="discount-banner">
-
-  <div class="discount-text">
-    <h1>Super Discount on Move</h1>
-    <p>
-      Over $100 USD savings on selected products. Have you ever finally just found the perfect deal that matches your needs? Grab it now before it’s gone!
-    </p>
-  </div>
-
-  <div class="discount-action">
-    <button>Shop Now</button>
-  </div>
-
-</section>
-  </div>
-  <div id="footer"></div>
-  </div>
-
-  <script>
-    fetch("header.html")
-      .then((response) => response.text())
-      .then((data) => {
-        document.getElementById("header").innerHTML = data;
-      });
-
-    fetch("footer.html")
-      .then((response) => response.text())
-      .then((data) => {
-        document.getElementById("footer").innerHTML = data;
-      });
-
-  
-let cartCount = document.querySelectorAll(".product-card").length;
-const cartCountElement = document.getElementById("cart-count");
-
-
-function updateCartCount() {
-  cartCountElement.textContent = cartCount;
-}
-
-updateCartCount();
-
-document.querySelectorAll(".remove-btn").forEach((btn) => {
-  btn.addEventListener("click", (e) => {
-    const productCard = e.target.closest(".product-card");
-    productCard.remove();
-
-    cartCount--;
-    updateCartCount();
-    updateSubtotal();
-  });
-});
-
-
-document.querySelector(".remove-all-btn").addEventListener("click", () => {
-  document.querySelectorAll(".product-card").forEach((card) => card.remove());
-
-  cartCount = 0;
-  updateCartCount();
-  updateSubtotal();
-});
-
-
-document.querySelectorAll(".product-card").forEach((card) => {
-  const select = card.querySelector("select");
-
-  select.addEventListener("change", () => {
-    updateSubtotal();
-  });
-});
-
-function updateSubtotal() {
-  let subtotal = 0;
-
-  document.querySelectorAll(".product-card").forEach((card) => {
-    let priceText = card.querySelector(".product-price h3").textContent;
-    let price = parseFloat(priceText.replace("$", ""));
-
-    let qtyText = card.querySelector("select").value;
-    let qty = parseInt(qtyText.replace("QTY:", "").trim());
-
-    subtotal += price * qty;
-  });
-
-  document.querySelector(".checkout div p").textContent = "$" + subtotal.toFixed(2);
-
-
-}
-
-
-document.querySelectorAll(".save-btn").forEach((btn) => {
-  btn.addEventListener("click", () => {
-    alert("Item saved for later!");
-  });
-});
-  </script>
 </body>
-
 </html>
