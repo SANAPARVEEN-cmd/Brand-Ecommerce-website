@@ -1,22 +1,19 @@
 // ============================
-// HEADER
+// HEADER / FOOTER LOAD
 // ============================
 
 fetch("header.html")
-    .then((res) => res.text())
-    .then((data) => {
-        document.getElementById("header").innerHTML = data;
-    });
-
-// ============================
-// FOOTER
-// ============================
+  .then(res => res.text())
+  .then(data => {
+    document.getElementById("header").innerHTML = data;
+  });
 
 fetch("footer.html")
-    .then((res) => res.text())
-    .then((data) => {
-        document.getElementById("footer").innerHTML = data;
-    });
+  .then(res => res.text())
+  .then(data => {
+    document.getElementById("footer").innerHTML = data;
+  });
+
 
 // ============================
 // ELEMENTS
@@ -27,18 +24,23 @@ const searchInput = document.getElementById("searchInput");
 const productCount = document.getElementById("productCount");
 const sortSelect = document.getElementById("sortSelect");
 
+
 // ============================
-// DISPLAY PRODUCTS
+// RENDER PRODUCTS
 // ============================
 
-function displayProducts(productsArray) {
-    productsGrid.innerHTML = "";
+function displayProducts(list) {
+  productsGrid.innerHTML = "";
 
-    productCount.innerText = productsArray.length;
+  productCount.innerText = list.length;
 
-    productsArray.forEach((product) => {
-        productsGrid.innerHTML += `
+  if (list.length === 0) {
+    productsGrid.innerHTML = `<p style="padding:20px;">No products found</p>`;
+    return;
+  }
 
+  list.forEach(product => {
+    productsGrid.innerHTML += `
       <div class="product-card">
 
         <img src="${product.image}" alt="${product.name}">
@@ -51,177 +53,141 @@ function displayProducts(productsArray) {
 
           <p class="brand">Brand: ${product.brand}</p>
 
-          <p class="rating">
-            ${"★".repeat(product.rating)}
-          </p>
+          <p class="rating">${"★".repeat(product.rating)}</p>
 
-          <span class="feature-tag">
-            ${product.feature}
-          </span>
+          <span class="feature-tag">${product.feature}</span>
 
-         <button 
-         class="buy-btn"
-        onclick="addToCart(${product.id})"
-        >
-         Add To Cart
-         </button>
+          <button class="buy-btn" onclick="addToCart(${product.id})">
+            Add To Cart
+          </button>
+
         </div>
 
       </div>
-
     `;
-    });
+  });
 }
 
+
 // ============================
-// FILTER PRODUCTS
+// FILTER SYSTEM
 // ============================
 
 function filterProducts() {
-    let filteredProducts = [...products];
 
-    // SEARCH FILTER
-    const searchValue = searchInput.value.toLowerCase();
+  let filtered = [...products];
 
-    filteredProducts = filteredProducts.filter((product) =>
-        product.name.toLowerCase().includes(searchValue),
-    );
+  // SEARCH
+  const search = searchInput.value.toLowerCase();
 
-    // CATEGORY FILTER
-    const selectedCategory = document.querySelector(
-        'input[name="category"]:checked',
-    ).value;
+  filtered = filtered.filter(p =>
+    p.name.toLowerCase().includes(search)
+  );
 
-    if (selectedCategory !== "all") {
-        filteredProducts = filteredProducts.filter(
-            (product) => product.category === selectedCategory,
-        );
-    }
 
-    // BRAND FILTER
-    const selectedBrands = [
-        ...document.querySelectorAll(".brand-filter:checked"),
-    ].map((input) => input.value);
+  // CATEGORY
+  const category = document.querySelector('input[name="category"]:checked')?.value;
 
-    if (selectedBrands.length > 0) {
-        filteredProducts = filteredProducts.filter((product) =>
-            selectedBrands.includes(product.brand),
-        );
-    }
+  if (category && category !== "all") {
+    filtered = filtered.filter(p => p.category === category);
+  }
 
-    // FEATURE FILTER
-    const selectedFeatures = [
-        ...document.querySelectorAll(".feature-filter:checked"),
-    ].map((input) => input.value);
 
-    if (selectedFeatures.length > 0) {
-        filteredProducts = filteredProducts.filter((product) =>
-            selectedFeatures.includes(product.feature),
-        );
-    }
+  // BRAND
+  const brands = [...document.querySelectorAll(".brand-filter:checked")]
+    .map(el => el.value);
 
-    // PRICE FILTER
-    const selectedPrice = document.querySelector(
-        'input[name="price"]:checked',
-    ).value;
+  if (brands.length) {
+    filtered = filtered.filter(p => brands.includes(p.brand));
+  }
 
-    if (selectedPrice === "100") {
-        filteredProducts = filteredProducts.filter(
-            (product) => product.price < 100,
-        );
-    } else if (selectedPrice === "500") {
-        filteredProducts = filteredProducts.filter(
-            (product) => product.price >= 100 && product.price <= 500,
-        );
-    } else if (selectedPrice === "1000") {
-        filteredProducts = filteredProducts.filter(
-            (product) => product.price > 500,
-        );
-    }
 
-    // RATING FILTER
-    const selectedRating = document.querySelector(
-        'input[name="rating"]:checked',
-    ).value;
+  // FEATURE
+  const features = [...document.querySelectorAll(".feature-filter:checked")]
+    .map(el => el.value);
 
-    if (selectedRating !== "all") {
-        filteredProducts = filteredProducts.filter(
-            (product) => product.rating >= Number(selectedRating),
-        );
-    }
+  if (features.length) {
+    filtered = filtered.filter(p => features.includes(p.feature));
+  }
 
-    // SORTING
-    const sortValue = sortSelect.value;
 
-    if (sortValue === "low-high") {
-        filteredProducts.sort((a, b) => a.price - b.price);
-    } else if (sortValue === "high-low") {
-        filteredProducts.sort((a, b) => b.price - a.price);
-    }
+  // PRICE
+  const price = document.querySelector('input[name="price"]:checked')?.value;
 
-    displayProducts(filteredProducts);
+  if (price === "100") {
+    filtered = filtered.filter(p => p.price < 100);
+  }
+  else if (price === "500") {
+    filtered = filtered.filter(p => p.price >= 100 && p.price <= 500);
+  }
+  else if (price === "1000") {
+    filtered = filtered.filter(p => p.price > 500);
+  }
+
+
+  // RATING
+  const rating = document.querySelector('input[name="rating"]:checked')?.value;
+
+  if (rating !== "all") {
+    filtered = filtered.filter(p => p.rating >= Number(rating));
+  }
+
+
+  // SORT
+  if (sortSelect.value === "low-high") {
+    filtered.sort((a, b) => a.price - b.price);
+  }
+  else if (sortSelect.value === "high-low") {
+    filtered.sort((a, b) => b.price - a.price);
+  }
+
+
+  displayProducts(filtered);
 }
+
 
 // ============================
 // EVENT LISTENERS
 // ============================
 
-searchInput.addEventListener("keyup", filterProducts);
-
+searchInput.addEventListener("input", filterProducts);
 sortSelect.addEventListener("change", filterProducts);
 
-document.querySelectorAll("input").forEach((input) => {
-    input.addEventListener("change", filterProducts);
+document.querySelectorAll("input").forEach(input => {
+  input.addEventListener("change", filterProducts);
 });
 
+
 // ============================
-// ADD TO CART
+// ADD TO CART (LOCALSTORAGE)
 // ============================
 
-function addToCart(productId){
+function addToCart(productId) {
 
-  // FIND PRODUCT
-  const selectedProduct = products.find(product =>
-    product.id === productId
-  );
+  const product = products.find(p => p.id === productId);
 
-
-  // GET EXISTING CART
   let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
+  const existing = cart.find(item => item.id === productId);
 
-  // CHECK IF PRODUCT ALREADY EXISTS
-  const existingProduct = cart.find(item =>
-    item.id === productId
-  );
-
-
-  if(existingProduct){
-
-    existingProduct.quantity += 1;
-
-  }
-
-  else{
-
+  if (existing) {
+    existing.quantity += 1;
+  } else {
     cart.push({
-      ...selectedProduct,
-      quantity:1
+      ...product,
+      quantity: 1
     });
-
   }
 
-
-  // SAVE UPDATED CART
   localStorage.setItem("cart", JSON.stringify(cart));
 
-
-  // OPTIONAL ALERT
- window.location.href = "addtocart.html";
-
+  // redirect to cart page
+  window.location.href = "addtocart.html";
 }
+
+
 // ============================
-// INITIAL DISPLAY
+// INITIAL LOAD
 // ============================
 
 filterProducts();

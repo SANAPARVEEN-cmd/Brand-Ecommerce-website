@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Details Page</title>
+    <link rel="stylesheet" href="details.css">
+</head>
+<body>
+     <div id="header"></div>
+     <div class="breadcrumb">
+
+  <a href="index.html">
+    Home
+    <i class="fa-solid fa-angle-right"></i>
+  </a>
+
+  <a href="#">
+    Clothing
+    <i class="fa-solid fa-angle-right"></i>
+  </a>
+
+  <a href="#">
+    Mens Wear
+    <i class="fa-solid fa-angle-right"></i>
+  </a>
+
+  <a href="#">
+    Summer Clothing
+    <i class="fa-solid fa-angle-right"></i>
+  </a>
+
+</div>
+
+
+   <div class="main">
+
+        <!-- LEFT SIDE -->
+        <div class="left">
+
+            <!-- Main Image -->
+            <div class="main-image">
+                <img id="bigImage"
+                    src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=1200&auto=format&fit=crop"
+                    alt="">
+            </div>
+
+            <!-- Small Images -->
+            <div class="small-images">
+
+                <img class="small-img active"
+                    src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=1200&auto=format&fit=crop"
+                    alt="">
+
+                <img class="small-img"
+                    src="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?q=80&w=1200&auto=format&fit=crop"
+                    alt="">
+
+                <img class="small-img"
+                    src="https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?q=80&w=1200&auto=format&fit=crop"
+                    alt="">
+
+                <img class="small-img"
+                    src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?q=80&w=1200&auto=format&fit=crop"
+                    alt="">
+
+            </div>
+
+        </div>
+
+        <!-- CENTER SIDE -->
+        <div class="center">
+
+            <!-- Stock -->
+            <p class="stock">
+                <i class="fa-solid fa-circle-check"></i>
+                In Stock
+            </p>
+
+            <!-- Title -->
+            <h1>
+                Men's Long Sleeve T-Shirt Cotton Based Layered Slim Muscle Fit
+            </h1>
+
+            <!-- Ratings -->
+            <div class="ratings">
+
+                <div class="stars">
+                    <i class="fa-solid fa-star"></i>
+                    4.8
+                </div>
+
+                <div class="reviews">
+                    32 Reviews
+                </div>
+
+                <div class="sold">
+                    1.2k Sold
+                </div>
+
+            </div>
+
+            <!-- Pricing -->
+            <div class="pricing-box">
+
+                <div class="price-card">
+                    <h2>$98</h2>
+                    <p>50 - 100 Pieces</p>
+                </div>
+
+                <div class="price-card middle">
+                    <h2>$90</h2>
+                    <p>100 - 700 Pieces</p>
+                </div>
+
+                <div class="price-card">
+                    <h2>$78</h2>
+                    <p>700+ Pieces</p>
+                </div>
+
+            </div>
+
+            <!-- Product Details -->
+            <div class="details">
+
+                <div class="detail-row">
+                    <span class="label">Price:</span>
+                    <span class="value">Negotiable</span>
+                </div>
+
+                <div class="detail-row">
+                    <span class="label">Type:</span>
+                    <span class="value">Classic Casual Shirt</span>
+                </div>
+
+                <div class="detail-row">
+                    <span class="label">Material:</span>
+                    <span class="value">100% Premium Cotton</span>
+                </div>
+
+                <div class="detail-row">
+                    <span class="label">Design:</span>
+                    <span class="value">Slim Fit Layered Style</span>
+                </div>
+
+                <div class="detail-row">
+                    <span class="label">Customization:</span>
+                    <span class="value">Custom Logo & Packaging</span>
+                </div>
+
+                <div class="detail-row">
+                    <span class="label">Protection:</span>
+                    <span class="value">Secure Payment Protection</span>
+                </div>
+
+                <div class="detail-row">
+                    <span class="label">Warranty:</span>
+                    <span class="value">1 Year Warranty</span>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- RIGHT SIDE -->
+        <div class="right">
+
+            <div class="supplier-card">
+
+                <div class="supplier-top">
+
+                    <div class="logo">
+                        T
+                    </div>
+
+                    <div>
+                        <h3>Supplier Trading LLC</h3>
+                        <p>Premium Verified Supplier</p>
+                    </div>
+
+                </div>
+
+                <hr>
+
+                <div class="supplier-info">
+
+                    <p>
+                        <i class="fa-solid fa-location-dot"></i>
+                        Germany, Berlin
+                    </p>
+
+                    <p>
+                        <i class="fa-solid fa-shield"></i>
+                        Verified Seller
+                    </p>
+
+                    <p>
+                        <i class="fa-solid fa-globe"></i>
+                        Worldwide Shipping
+                    </p>
+
+                </div>
+
+                <button class="inquiry-btn">
+                    Send Inquiry
+                </button>
+
+                <button class="profile-btn">
+                    Seller's Profile
+                </button>
+
+                <div class="save">
+
+                    <i class="fa-regular fa-heart"></i>
+
+                    <span>Save for later</span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="details-container">
+
+    <!-- LEFT SIDE -->
+    <div class="details-left">
+
+        <!-- Tabs -->
+        <div class="tabs">
+
+            <button class="tab-btn active" data-tab="description">
+                Description
+            </button>
+
+            <button class="tab-btn" data-tab="reviews">
+                Reviews
+            </button>
+
+            <button class="tab-btn" data-tab="shipping">
+                Shipping
+            </button>
+
+            <button class="tab-btn" data-tab="seller">
+                About Seller
+            </button>
+
+        </div>
+
+        <!-- DESCRIPTION -->
+        <div class="tab-content active" id="description">
+
+            <p class="desc-text">
+                Premium quality men's slim fit cotton shirt designed for comfort,
+                fashion, and durability. Perfect for casual wear, office style,
+                and modern street fashion. Soft breathable fabric with layered
+                stitching design gives a luxury appearance.
+            </p>
+
+            <!-- Specifications -->
+            <div class="specifications">
+
+                <div class="spec-row">
+                    <span class="spec-title">Model</span>
+                    <span class="spec-value">Classic Slim Wear 2026</span>
+                </div>
+
+                <div class="spec-row">
+                    <span class="spec-title">Style</span>
+                    <span class="spec-value">Casual & Fashion</span>
+                </div>
+
+                <div class="spec-row">
+                    <span class="spec-title">Certificates</span>
+                    <span class="spec-value">ISO Certified</span>
+                </div>
+
+                <div class="spec-row">
+                    <span class="spec-title">Size</span>
+                    <span class="spec-value">S, M, L, XL, XXL</span>
+                </div>
+
+                <div class="spec-row">
+                    <span class="spec-title">Material</span>
+                    <span class="spec-value">100% Cotton</span>
+                </div>
+
+            </div>
+
+            <!-- Features -->
+            <div class="features">
+
+                <h3>Features:</h3>
+
+                <p>
+                    <i class="fa-solid fa-check"></i>
+                    Breathable premium cotton fabric
+                </p>
+
+                <p>
+                    <i class="fa-solid fa-check"></i>
+                    Soft comfortable fitting
+                </p>
+
+                <p>
+                    <i class="fa-solid fa-check"></i>
+                    Wrinkle resistant stitching
+                </p>
+
+                <p>
+                    <i class="fa-solid fa-check"></i>
+                    High durability fabric quality
+                </p>
+
+                <p>
+                    <i class="fa-solid fa-check"></i>
+                    Modern layered slim style
+                </p>
+
+            </div>
+
+        </div>
+
+        <!-- REVIEWS -->
+        <div class="tab-content" id="reviews">
+
+            <div class="review-box">
+
+                <h4>⭐⭐⭐⭐⭐ - Ahmed Khan</h4>
+
+                <p>
+                    Excellent fabric quality and perfect fitting.
+                    Product exactly matches the pictures.
+                </p>
+
+            </div>
+
+            <div class="review-box">
+
+                <h4>⭐⭐⭐⭐ - James Walker</h4>
+
+                <p>
+                    Delivery was fast and stitching quality is amazing.
+                    Recommended supplier.
+                </p>
+
+            </div>
+
+            <div class="review-box">
+
+                <h4>⭐⭐⭐⭐⭐ - Ali Raza</h4>
+
+                <p>
+                    Very comfortable shirt for summer wear.
+                    Fabric feels premium.
+                </p>
+
+            </div>
+
+        </div>
+
+        <!-- SHIPPING -->
+        <div class="tab-content" id="shipping">
+
+            <div class="shipping-box">
+
+                <p>
+                    <strong>Shipping Method:</strong>
+                    DHL, FedEx, UPS
+                </p>
+
+                <p>
+                    <strong>Delivery Time:</strong>
+                    5 - 10 Business Days
+                </p>
+
+                <p>
+                    <strong>Packaging:</strong>
+                    Premium Secure Packaging
+                </p>
+
+                <p>
+                    <strong>Worldwide Shipping:</strong>
+                    Available
+                </p>
+
+                <p>
+                    <strong>Tracking:</strong>
+                    Live Tracking Included
+                </p>
+
+            </div>
+
+        </div>
+
+        <!-- ABOUT SELLER -->
+        <div class="tab-content" id="seller">
+
+            <div class="seller-box">
+
+                <h3>Supplier Trading LLC</h3>
+
+                <p>
+                    Supplier Trading LLC is a globally trusted fashion supplier
+                    based in Berlin, Germany. The company specializes in
+                    manufacturing premium quality men's wear products for
+                    international wholesale buyers.
+                </p>
+
+                <p>
+                    Experience: 12+ Years
+                </p>
+
+                <p>
+                    Verified Export Company
+                </p>
+
+                <p>
+                    Worldwide Delivery Services
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- RIGHT SIDE -->
+    <div class="details-right">
+
+        <h2>You May Like</h2>
+
+        <!-- Product -->
+        <div class="suggestion-card">
+
+            <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=1200&auto=format&fit=crop">
+
+            <div>
+                <h4>Men Casual Cotton Shirt</h4>
+                <p>$49.00</p>
+            </div>
+
+        </div>
+
+        <!-- Product -->
+        <div class="suggestion-card">
+
+            <img src="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?q=80&w=1200&auto=format&fit=crop">
+
+            <div>
+                <h4>Premium Slim T-Shirt</h4>
+                <p>$58.00</p>
+            </div>
+
+        </div>
+
+        <!-- Product -->
+        <div class="suggestion-card">
+
+            <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?q=80&w=1200&auto=format&fit=crop">
+
+            <div>
+                <h4>Luxury Polo Wear</h4>
+                <p>$65.00</p>
+            </div>
+
+        </div>
+
+        <!-- Product -->
+        <div class="suggestion-card">
+
+            <img src="https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?q=80&w=1200&auto=format&fit=crop">
+
+            <div>
+                <h4>Summer Casual Shirt</h4>
+                <p>$39.00</p>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+<!-- ========================= -->
+<!-- RELATED PRODUCTS -->
+<!-- ========================= -->
+
+<div class="related-products">
+
+    <h2>Related Products</h2>
+
+    <div class="related-grid">
+
+        <!-- PRODUCT -->
+        <div class="related-card">
+
+            <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=1200&auto=format&fit=crop">
+
+            <h4>Men Cotton Casual Shirt</h4>
+
+            <p class="price">$32 - $40</p>
+
+        </div>
+
+        <!-- PRODUCT -->
+        <div class="related-card">
+
+            <img src="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?q=80&w=1200&auto=format&fit=crop">
+
+            <h4>Premium Slim Fit T-Shirt</h4>
+
+            <p class="price">$28 - $35</p>
+
+        </div>
+
+        <!-- PRODUCT -->
+        <div class="related-card">
+
+            <img src="https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?q=80&w=1200&auto=format&fit=crop">
+
+            <h4>Luxury Polo Shirt</h4>
+
+            <p class="price">$45 - $60</p>
+
+        </div>
+
+        <!-- PRODUCT -->
+        <div class="related-card">
+
+            <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?q=80&w=1200&auto=format&fit=crop">
+
+            <h4>Summer Fashion Wear</h4>
+
+            <p class="price">$25 - $38</p>
+
+        </div>
+
+        <!-- PRODUCT -->
+        <div class="related-card">
+
+            <img src="https://images.unsplash.com/photo-1496747611176-843222e1e57c?q=80&w=1200&auto=format&fit=crop">
+
+            <h4>Classic Full Sleeve Shirt</h4>
+
+            <p class="price">$36 - $50</p>
+
+        </div>
+
+        <!-- PRODUCT -->
+        <div class="related-card">
+
+            <img src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?q=80&w=1200&auto=format&fit=crop">
+
+            <h4>Modern Street Style Shirt</h4>
+
+            <p class="price">$30 - $48</p>
+
+        </div>
+
+    </div>
+
+</div>
+     <div id="footer"></div>
+<script src = "details.js"></script>
+</body>
+</html>

@@ -1,12 +1,16 @@
 const products = [
 
+  // ================= ELECTRONICS =================
+
+
   // ================= PHONES =================
 
   {
     id:1,
+    mainCategory:"electronics",
     name:"iPhone 15 Pro",
     category:"phone",
-    brand:"Samsung",
+    brand:"Apple",
     feature:"Metallic",
     price:1200,
     rating:5,
@@ -15,6 +19,7 @@ const products = [
 
   {
     id:2,
+    mainCategory:"electronics",
     name:"Samsung S24 Ultra",
     category:"phone",
     brand:"Samsung",
@@ -26,6 +31,7 @@ const products = [
 
   {
     id:3,
+    mainCategory:"electronics",
     name:"Xiaomi Redmi Note",
     category:"phone",
     brand:"Xiaomi",
@@ -37,6 +43,7 @@ const products = [
 
   {
     id:4,
+    mainCategory:"electronics",
     name:"iPhone 14",
     category:"phone",
     brand:"Apple",
@@ -52,6 +59,7 @@ const products = [
 
   {
     id:5,
+    mainCategory:"electronics",
     name:"Dell XPS Laptop",
     category:"laptop",
     brand:"Dell",
@@ -63,6 +71,7 @@ const products = [
 
   {
     id:6,
+    mainCategory:"electronics",
     name:"MacBook Pro",
     category:"laptop",
     brand:"Apple",
@@ -74,6 +83,7 @@ const products = [
 
   {
     id:7,
+    mainCategory:"electronics",
     name:"Samsung Galaxy Book",
     category:"laptop",
     brand:"Samsung",
@@ -85,8 +95,11 @@ const products = [
 
 
 
+  // ================= HEADPHONES =================
+
   {
     id:8,
+    mainCategory:"electronics",
     name:"Sony WH Headphones",
     category:"headphone",
     brand:"Sony",
@@ -98,6 +111,7 @@ const products = [
 
   {
     id:9,
+    mainCategory:"electronics",
     name:"Samsung Buds",
     category:"headphone",
     brand:"Samsung",
@@ -109,6 +123,7 @@ const products = [
 
   {
     id:10,
+    mainCategory:"electronics",
     name:"AirPods Pro",
     category:"headphone",
     brand:"Apple",
@@ -124,6 +139,7 @@ const products = [
 
   {
     id:11,
+    mainCategory:"electronics",
     name:"Apple Watch Ultra",
     category:"watch",
     brand:"Apple",
@@ -135,6 +151,7 @@ const products = [
 
   {
     id:12,
+    mainCategory:"electronics",
     name:"Samsung Galaxy Watch",
     category:"watch",
     brand:"Samsung",
@@ -146,6 +163,7 @@ const products = [
 
   {
     id:13,
+    mainCategory:"electronics",
     name:"Xiaomi Smart Watch",
     category:"watch",
     brand:"Xiaomi",
@@ -153,6 +171,5 @@ const products = [
     price:120,
     rating:4,
     image:"/assets/Image/tech/8.png"
-  }
-
-];
+  },
+]
