@@ -1,26 +1,22 @@
- fetch("header.html")
-    .then(res => res.text())
-    .then(data => {
-      document.getElementById("header").innerHTML = data;
-    });
+fetch("header.html")
+.then(res => res.text())
+.then(data => {
+  document.getElementById("header").innerHTML = data;
+});
 
-  fetch("footer.html")
-    .then(res => res.text())
-    .then(data => {
-      document.getElementById("footer").innerHTML = data;
-    });
+fetch("footer.html")
+.then(res => res.text())
+.then(data => {
+  document.getElementById("footer").innerHTML = data;
+});
 
 
-    // PRODUCT CONTAINER
+// =========================
+// ELEMENTS
+// =========================
+
 const productsContainer = document.querySelector(".items-sideright");
-
-// FILTER BUTTONS
-const filterButtons = document.querySelectorAll(".filter-btn");
-
-// SEARCH INPUT
 const searchInput = document.querySelector("#searchInput");
-
-
 
 // =========================
 // DISPLAY PRODUCTS
@@ -28,12 +24,13 @@ const searchInput = document.querySelector("#searchInput");
 
 function displayProducts(productArray){
 
+  if(!productsContainer) return;
+
   productsContainer.innerHTML = "";
 
   productArray.forEach(product => {
 
     productsContainer.innerHTML += `
-
       <div class="product-card">
 
         <img src="${product.image}" alt="${product.name}"/>
@@ -44,71 +41,31 @@ function displayProducts(productArray){
         </div>
 
       </div>
-
     `;
-
   });
-
 }
 
-
-
 // =========================
-// SHOW ALL PRODUCTS FIRST
+// INIT
 // =========================
 
 displayProducts(products);
 
-
-
-
 // =========================
-// FILTER PRODUCTS
+// SEARCH FUNCTION
 // =========================
 
-filterButtons.forEach(button => {
+if(searchInput){
 
-  button.addEventListener("click", () => {
+  searchInput.addEventListener("input", () => {
 
-    const category = button.dataset.filter;
+    const value = searchInput.value.toLowerCase();
 
-    if(category === "all"){
+    const filtered = products.filter(p =>
+      p.name.toLowerCase().includes(value)
+    );
 
-      displayProducts(products);
-
-    }
-
-    else{
-
-      const filteredProducts = products.filter(product => 
-        product.category === category
-      );
-
-      displayProducts(filteredProducts);
-
-    }
-
+    displayProducts(filtered);
   });
 
-});
-
-
-
-
-// =========================
-// SEARCH PRODUCTS
-// =========================
-
-searchInput.addEventListener("keyup", () => {
-
-  const searchValue = searchInput.value.toLowerCase();
-
-  const searchedProducts = products.filter(product =>
-
-    product.name.toLowerCase().includes(searchValue)
-
-  );
-
-  displayProducts(searchedProducts);
-
-});
+}

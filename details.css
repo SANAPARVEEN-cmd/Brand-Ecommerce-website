@@ -24,6 +24,14 @@ a{
     text-decoration: none;
 }
 
+/* STICKY NAVBAR */
+#header{
+    position: sticky;
+    top: 0;
+    z-index: 9999;
+    background: #fff;
+    width: 100%;
+}
 /* ========================= */
 /* BREADCRUMB */
 /* ========================= */
@@ -753,21 +761,88 @@ a{
     font-size: 15px;
     font-weight: 600;
 }
+.color-contain{
+    display:flex;
+    justify-content: space-between;
+    background: linear-gradient(to bottom, rgb(25, 25, 237) , rgb(81, 81, 211));
+    height:60px;
+    width:100%;
+    margin:30px;
+}
+.discount-card{
+    width: 90%;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 35px 40px;
+    background: linear-gradient(90deg,#1c7cff,#00b7ff);
+    border-radius: 16px;
 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+.left-content h2{
+    font-size: 32px;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.left-content p{
+    font-size: 16px;
+    opacity: 0.9;
+    max-width: 500px;
+}
+
+.right-content button{
+    padding: 14px 30px;
+    border: none;
+    border-radius: 10px;
+    background-color: white;
+    color: #1c7cff;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.right-content button:hover{
+    background-color: #f1f1f1;
+    transform: translateY(-2px);
+}
+
+@media(max-width:768px){
+
+    .discount-card{
+        flex-direction: column;
+        text-align: center;
+        padding: 25px;
+    }
+
+    .left-content h2{
+        font-size: 24px;
+    }
+
+    .right-content button{
+        width: 100%;
+    }
+}
 /* RESPONSIVE */
-
 @media(max-width: 992px){
 
     .related-grid{
         flex-wrap: wrap;
     }
-
     .related-card{
         width: 31%;
     }
 
 }
-
 @media(max-width: 768px){
 
     .related-card{

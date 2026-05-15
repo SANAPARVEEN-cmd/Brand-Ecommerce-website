@@ -36,8 +36,17 @@ function renderCart(){
   cartContainer.innerHTML = "";
 
   if(cart.length === 0){
-    cartContainer.innerHTML = `<h3>Your cart is empty</h3>`;
+
+    cartContainer.innerHTML = `
+      <div class="empty-cart">
+        <h3>Your cart is empty</h3>
+      </div>
+    `;
+
+    cartCount.innerText = 0;
+
     updateTotals();
+
     return;
   }
 
@@ -49,37 +58,57 @@ function renderCart(){
         <div class="product-info">
 
           <figure>
-            <img src="${item.image}" />
+            <img src="${item.image}" alt="${item.name}">
           </figure>
 
           <div class="product-text">
+
             <h4>${item.name}</h4>
-            <p>Brand: ${item.brand}</p>
+
+            <p>
+              Brand: ${item.brand}
+            </p>
 
             <div class="buttons">
 
-              <button class="remove-btn" onclick="removeItem(${index})">
+              <button 
+                class="remove-btn"
+                onclick="removeItem(${index})"
+              >
+                <i class="fa-solid fa-trash"></i>
                 Remove
               </button>
 
-              <button class="save-btn" onclick="saveForLater(${index})">
+              <button 
+                class="save-btn"
+                onclick="saveForLater(${index})"
+              >
+                <i class="fa-regular fa-bookmark"></i>
                 Save for later
               </button>
 
             </div>
+
           </div>
 
         </div>
 
         <aside class="product-price">
+
           <h3>$${item.price}</h3>
 
           <select onchange="changeQty(${index},this.value)">
-            <option ${item.quantity==1?"selected":""}>1</option>
-            <option ${item.quantity==2?"selected":""}>2</option>
-            <option ${item.quantity==3?"selected":""}>3</option>
-            <option ${item.quantity==4?"selected":""}>4</option>
+
+            <option value="1" ${item.quantity==1?"selected":""}>Qty: 1</option>
+
+            <option value="2" ${item.quantity==2?"selected":""}>Qty: 2</option>
+
+            <option value="3" ${item.quantity==3?"selected":""}>Qty: 3</option>
+
+            <option value="4" ${item.quantity==4?"selected":""}>Qty: 4</option>
+
           </select>
+
         </aside>
 
       </div>
@@ -90,6 +119,8 @@ function renderCart(){
 
   updateTotals();
 }
+
+
 
 
 // ===============================
@@ -223,6 +254,35 @@ document.querySelector(".checkout button").addEventListener("click", ()=>{
   renderCart();
 });
 
+// ===============================
+// CLEAR ENTIRE CART
+// ===============================
+
+function clearCart(){
+
+  if(cart.length === 0){
+    alert("Cart is already empty!");
+    return;
+  }
+
+  let confirmDelete = confirm(
+    "Are you sure you want to remove all products?"
+  );
+
+  if(confirmDelete){
+
+    cart = [];
+
+    localStorage.setItem(
+      "cart",
+      JSON.stringify(cart)
+    );
+
+    renderCart();
+
+    alert("All products removed successfully!");
+  }
+}
 
 // INITIAL LOAD
 renderCart();

@@ -1,60 +1,87 @@
-fetch("header.html")
-  .then(res => res.text())
-  .then(data => {
-    document.getElementById("header").innerHTML = data;
-  });
+// =========================
+// HEADER + FOOTER LOAD
+// =========================
 
-fetch("footer.html")
-  .then(res => res.text())
-  .then(data => {
-    document.getElementById("footer").innerHTML = data;
-  });
-const smallImages = document.querySelectorAll(".small-img");
-const bigImage = document.getElementById("bigImage");
+document.addEventListener("DOMContentLoaded", () => {
 
-smallImages.forEach((img) => {
+  const header = document.getElementById("header");
+  const footer = document.getElementById("footer");
+
+  if (header) {
+    fetch("header.html")
+      .then(res => res.text())
+      .then(data => header.innerHTML = data);
+  }
+
+  if (footer) {
+    fetch("footer.html")
+      .then(res => res.text())
+      .then(data => footer.innerHTML = data);
+  }
+
+  initGallery();
+  initTabs();
+});
+
+
+// =========================
+// IMAGE GALLERY
+// =========================
+
+function initGallery() {
+
+  const smallImages = document.querySelectorAll(".small-img");
+  const bigImage = document.getElementById("bigImage");
+
+  if (!bigImage || smallImages.length === 0) return;
+
+  smallImages.forEach(img => {
 
     img.addEventListener("click", () => {
 
-        bigImage.src = img.src;
+      // change main image
+      bigImage.src = img.src;
 
-        smallImages.forEach((item) => {
-            item.classList.remove("active");
-        });
-
-        img.classList.add("active");
-
-    });
-
-});
-
-// =========================
-// TABS
-// =========================
-
-const tabButtons = document.querySelectorAll(".tab-btn");
-const tabContents = document.querySelectorAll(".tab-content");
-
-tabButtons.forEach((button) => {
-
-    button.addEventListener("click", () => {
-
-        const tab = button.dataset.tab;
-
-        // remove active
-        tabButtons.forEach((btn) => {
-            btn.classList.remove("active");
-        });
-
-        tabContents.forEach((content) => {
-            content.classList.remove("active");
-        });
-
-        // add active
-        button.classList.add("active");
-
-        document.getElementById(tab).classList.add("active");
+      // active class handling
+      smallImages.forEach(i => i.classList.remove("active"));
+      img.classList.add("active");
 
     });
 
-});
+  });
+}
+
+
+// =========================
+// TABS SYSTEM
+// =========================
+
+function initTabs() {
+
+  const tabButtons = document.querySelectorAll(".tab-btn");
+  const tabContents = document.querySelectorAll(".tab-content");
+
+  if (tabButtons.length === 0 || tabContents.length === 0) return;
+
+  tabButtons.forEach(btn => {
+
+    btn.addEventListener("click", () => {
+
+      const target = btn.dataset.tab;
+
+      // remove active from all
+      tabButtons.forEach(b => b.classList.remove("active"));
+      tabContents.forEach(c => c.classList.remove("active"));
+
+      // activate current
+      btn.classList.add("active");
+
+      const targetContent = document.getElementById(target);
+      if (targetContent) {
+        targetContent.classList.add("active");
+      }
+
+    });
+
+  });
+}

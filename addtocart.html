@@ -15,17 +15,58 @@
 <div class="wrapper">
 
   <div id="header"></div>
+ <div class="breadcrumb">
 
+  <a href="index.html">
+    Home
+    <i class="fa-solid fa-angle-right"></i>
+  </a>
+
+  <a href="details.html">
+    Clothing
+    <i class="fa-solid fa-angle-right"></i>
+  </a>
+
+  <a href="#">
+    Mens Wear
+    <i class="fa-solid fa-angle-right"></i>
+  </a>
+
+  <a href="#">
+    Summer Clothing
+    <i class="fa-solid fa-angle-right"></i>
+  </a>
+
+</div>
   <h3 class="cart-header">
     Cart Items:
     <span id="cart-count">0</span>
   </h3>
+ 
 
   <section class="above-section">
 
     <!-- LEFT SIDE CART -->
-    <section class="cart-product" id="cartContainer"></section>
+  <section class="cart-product">
 
+  <div id="cartContainer"></div>
+
+  <!-- ACTION BUTTONS (BOTTOM LEFT SIDE) -->
+  <div class="cart-top-actions">
+
+     <a href="index.html" class="back-home-btn">
+       <i class="fa-solid fa-arrow-left"></i>
+       Back To Home
+     </a>
+
+     <button class="clear-cart-btn" onclick="clearCart()">
+       <i class="fa-solid fa-trash"></i>
+       Remove All Products
+     </button>
+
+  </div>
+
+</section>
     <!-- RIGHT SIDE -->
     <aside class="right-side">
 
@@ -68,7 +109,18 @@
     </aside>
 
   </section>
+<div class="discount-card">
+    
+    <div class="left-content">
+        <h2>Super Discount on Orders Over $100</h2>
+        <p>Discover amazing deals on premium products with fast delivery and secure shopping.</p>
+    </div>
 
+    <div class="right-content">
+        <button>Shop Now</button>
+    </div>
+ 
+</div>
   <div id="footer"></div>
 
 </div>
