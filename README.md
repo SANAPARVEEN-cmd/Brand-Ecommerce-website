@@ -145,7 +145,3 @@ Update `header.html` / `footer.html` and refresh pages.
 - No real backend/checkout; checkout is simulated with alerts and clearing cart.
 
 ---
-
-## License
-
-Add your license here (e.g., MIT).
